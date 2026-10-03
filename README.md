@@ -1,7 +1,7 @@
 # Nyanime website
 
 English static website and Android App Link landing page for Nyanime.
-Published at https://noire342.github.io/ using GitHub Pages, with no application backend.
+Published at https://owouwuiwi.github.io/ using GitHub Pages, with no application backend.
 
 - `index.html`: app presentation and latest public APK download.
 - `open/`: shared-content landing page; references are kept in the fragment.
@@ -14,8 +14,8 @@ Run locally with `python -m http.server 8841`. Run contract checks with
 The download link uses the latest recommended four-part release from
 `owouwuiwi/nyanime`, with the former repository address as a migration fallback.
 Only verified canonical universal APKs are offered; preview compatibility aliases
-do not change the website's recommended download. The website and App Link host
-stay at their existing Pages address so already shared links keep working.
+do not change the website's recommended download. The previous Pages address keeps
+a compatibility redirect and Android association so already shared links keep working.
 When the public GitHub releases API
 is unavailable, the GitHub releases page remains available. No analytics, login,
 or cookies are used; the optional theme choice is stored locally in the browser.
