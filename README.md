@@ -9,9 +9,14 @@ Published at https://noire342.github.io/ using GitHub Pages, with no application
 - `assets/content-links.js`: strict, source-agnostic v2 decoder and backward-compatible v1 bridge.
 
 Run locally with `python -m http.server 8841`. Run contract checks with
-`node --test tests/content-links.test.cjs`. The browser smoke script uses Playwright.
+`node --test tests/*.test.cjs`. The browser smoke script uses Playwright.
 
-The download link is resolved from the public GitHub releases API. When that API
+The download link uses the latest recommended four-part release from
+`owouwuiwi/nyanime`, with the former repository address as a migration fallback.
+Only verified canonical universal APKs are offered; preview compatibility aliases
+do not change the website's recommended download. The website and App Link host
+stay at their existing Pages address so already shared links keep working.
+When the public GitHub releases API
 is unavailable, the GitHub releases page remains available. No analytics, login,
 or cookies are used; the optional theme choice is stored locally in the browser.
 GitHub receives website requests. Shared-content fragments are not sent to the host.

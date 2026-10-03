@@ -23,19 +23,15 @@
   if (!download) return;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 7000);
-  fetch('https://api.github.com/repos/noire342/nyanime/releases?per_page=5', { signal: controller.signal })
-    .then(response => { if (!response.ok) throw new Error('Release unavailable'); return response.json(); })
-    .then(releases => {
-      const release = releases.find(item => !item.draft && item.assets?.some(asset => asset.name === 'app-universal-preview.apk'));
-      if (!release) return;
-      const asset = release.assets.find(item => item.name === 'app-universal-preview.apk');
-      const trusted = /^https:\/\/github\.com\/noire342\/nyanime\/releases\//;
-      if (!trusted.test(asset.browser_download_url) || !trusted.test(release.html_url)) return;
+  NyanimeReleases.load(['owouwuiwi/nyanime', 'noire342/nyanime'], fetch, controller.signal)
+    .then(selected => {
+      if (!selected) return;
+      const { release, asset, version } = selected;
       download.href = asset.browser_download_url;
       const notes = document.getElementById('release-notes');
       if (notes) notes.href = release.html_url;
       const label = document.getElementById('release-label');
-      if (label) label.textContent = `${release.tag_name} · Preview${asset.size ? ' · ' + Math.round(asset.size / 1048576) + ' MB' : ''}`;
+      if (label) label.textContent = `${version} · Recommended${asset.size ? ' · ' + Math.round(asset.size / 1048576) + ' MB' : ''}`;
     })
     .catch(() => { /* The GitHub release link remains usable when the API is unavailable. */ })
     .finally(() => clearTimeout(timeout));
