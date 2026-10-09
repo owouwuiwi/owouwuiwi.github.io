@@ -8,6 +8,10 @@ Published at https://owouwuiwi.github.io/ using GitHub Pages, with no applicatio
 - `.well-known/assetlinks.json`: association for the signed public Android preview.
 - `assets/content-links.js`: strict, source-agnostic v2 decoder and backward-compatible v1 bridge.
 
+The landing page highlights the current Android feature set, including two-page
+manga reading and optional live TV. Its wordmarks and app mark follow the assets
+used by the Android app; the website does not bundle app code.
+
 Run locally with `python -m http.server 8841`. Run contract checks with
 `node --test tests/*.test.cjs`. The browser smoke script uses Playwright.
 
