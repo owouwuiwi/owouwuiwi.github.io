@@ -10,7 +10,7 @@
       const raw = fragment.replace(/^#/, '');
       const divider = raw.indexOf('?');
       if (divider < 0) return null;
-      const route = /^v2\/(anime|manga)\/([a-z0-9]+(?:-[a-z0-9]+)*)$/.exec(raw.slice(0, divider));
+      const route = /^v2\/(anime|manga|tv)\/([a-z0-9]+(?:-[a-z0-9]+)*)$/.exec(raw.slice(0, divider));
       if (!route || route[2].length > 80) return null;
       const query = raw.slice(divider + 1);
       // URLSearchParams tolerates malformed UTF-8. Validate percent escapes strictly first.
@@ -27,7 +27,9 @@
         !optional(fields, 'sourceName', 128) || !optional(fields, 'item', 4096) ||
         !optional(fields, 'itemTitle', 512)) return null;
       if (!fields.has('item') && ['itemTitle', 'at', 'page'].some(key => fields.has(key))) return null;
-      const medium = route[1] === 'anime' ? 'ANIME' : 'MANGA';
+      const medium = { anime: 'ANIME', manga: 'MANGA', tv: 'TV' }[route[1]];
+      if (medium === 'TV' && (fields.get('ref').length > 1024 || /^https?:\/\//i.test(fields.get('ref')) ||
+        ['item', 'itemTitle', 'at', 'page'].some(key => fields.has(key)))) return null;
       const link = { medium, sourceId: sourceId.toString(), entryUrl: fields.get('ref'), title: fields.get('title') };
       for (const [input, output] of [['sourceName', 'sourceName'], ['item', 'itemUrl'], ['itemTitle', 'itemTitle']]) {
         if (fields.has(input)) link[output] = fields.get(input);

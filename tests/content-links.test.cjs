@@ -3,6 +3,18 @@ const assert = require('node:assert/strict');
 const { decode, legacyLink } = require('../assets/content-links.js');
 const fragment = '#v2/anime/test-title?source=9223372036854775807&ref=/catalogue/test%3Fedition%3D2&title=Test%20title&item=/episode/2&at=123456';
 
+test('live channels keep an opaque identity without video URLs or episode positions', () => {
+  const raw = '#v2/tv/test-channel?source=42&ref=opaque-feed&title=Test%20channel';
+  const link = decode(raw);
+  assert.equal(link.medium, 'TV');
+  assert.equal(link.entryUrl, 'opaque-feed');
+  assert.equal(JSON.parse(Buffer.from(legacyLink(link).split('#')[1], 'base64url')).medium, 'TV');
+  for (const extra of ['&at=0', '&page=1', '&item=episode', '&itemTitle=Episode']) {
+    assert.equal(decode(raw + extra), null);
+  }
+  assert.equal(decode(raw.replace('opaque-feed', encodeURIComponent('https://media.example/live'))), null);
+});
+
 test('old app bridge preserves 64-bit extension identities and exact opaque references', () => {
   const link = decode(fragment);
   assert.equal(link.sourceId, '9223372036854775807');

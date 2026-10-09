@@ -18,9 +18,11 @@
     return;
   }
   document.title = `${link.title} — Nyanime`;
-  byId('open-kind').textContent = link.medium === 'ANIME' ? 'A video shared with you' : 'A manga shared with you';
+  byId('open-kind').textContent = link.medium === 'TV' ? 'A live channel shared with you' :
+    link.medium === 'ANIME' ? 'A video shared with you' : 'A manga shared with you';
   byId('open-title').textContent = link.title;
-  byId('open-subtitle').textContent = link.itemTitle || (link.itemUrl ? (link.medium === 'ANIME' ? 'Open the shared episode.' : 'Open the shared chapter.') : 'Open the title in your app.');
+  byId('open-subtitle').textContent = link.medium === 'TV' ? 'Watch this channel live in Nyanime.' :
+    link.itemTitle || (link.itemUrl ? (link.medium === 'ANIME' ? 'Open the shared episode.' : 'Open the shared chapter.') : 'Open the title in your app.');
   if (link.positionMs > 0) {
     const total = Math.floor(link.positionMs / 1000);
     const hours = Math.floor(total / 3600);
