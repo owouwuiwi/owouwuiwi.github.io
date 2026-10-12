@@ -9,7 +9,7 @@
     const label = theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
     themeButton?.setAttribute('aria-label', label);
     themeButton?.setAttribute('title', label);
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#faf6ef' : '#111014');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', theme === 'light' ? '#faf2ef' : '#130f16');
   };
   apply(stored === 'light' || stored === 'dark' ? stored : media.matches ? 'light' : 'dark');
   themeButton?.addEventListener('click', () => {
