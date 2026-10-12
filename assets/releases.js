@@ -4,8 +4,7 @@
     if (!release || release.draft || release.prerelease ||
         !/^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/.test(release.tag_name)) return null;
     const version = release.tag_name.slice(1);
-    const asset = release.assets?.find(item => item.name === `Nyanime-production-${version}-universal.apk`) ||
-      release.assets?.find(item => item.name === `Nyanime-${version}-universal.apk`);
+    const asset = release.assets?.find(item => item.name === `Nyanime-${version}-universal.apk`);
     if (!asset) return null;
     const trusted = repositories.some(repository =>
       release.html_url === `https://github.com/${repository}/releases/tag/${release.tag_name}` &&

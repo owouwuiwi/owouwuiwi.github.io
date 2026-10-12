@@ -3,14 +3,6 @@
     "relation": ["delegate_permission/common.handle_all_urls"],
     "target": {
       "namespace": "android_app",
-      "package_name": "it.owouwuiwi.nyanime",
-      "sha256_cert_fingerprints": ["7D:D3:68:79:2C:4D:94:D1:18:6C:C4:B0:E2:AD:6C:2F:34:FC:E5:DD:37:F1:9C:6A:1B:AB:45:10:6F:FC:13:6B"]
-    }
-  },
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
       "package_name": "xyz.jmir.tachiyomi.mi.anime4k.debug",
       "sha256_cert_fingerprints": ["F9:9A:D4:7F:92:86:CE:3D:61:34:5F:65:DD:0F:88:8F:16:AE:BF:53:BF:E7:5E:FE:5B:6A:B8:89:04:1A:B2:59"]
     }
