@@ -1,0 +1,102 @@
+/* Homepage motion: small distances, one-shot reveals and native disclosures. */
+:root {
+  --motion-reveal: 500ms;
+  --motion-surface: 350ms;
+  --motion-disclosure: 250ms;
+  --motion-distance: 12px;
+}
+
+.theme-button { position: relative; }
+.theme-button .theme-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transition: opacity var(--motion-disclosure), transform var(--motion-disclosure) var(--ease-smooth-out);
+}
+.theme-sun { opacity: 1; transform: translate(-50%, -50%) rotate(0); }
+.theme-moon { opacity: 0; transform: translate(-50%, -50%) rotate(-45deg) scale(.7); }
+[data-theme=light] .theme-sun { opacity: 0; transform: translate(-50%, -50%) rotate(45deg) scale(.7); }
+[data-theme=light] .theme-moon { opacity: 1; transform: translate(-50%, -50%) rotate(0) scale(1); }
+
+.header nav > a:not(.nav-download), .footer > div a {
+  position: relative;
+  transition: color var(--duration-quick);
+}
+.header nav > a:not(.nav-download)::after, .footer > div a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  inset-inline: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--motion-disclosure) var(--ease-smooth-out);
+}
+.header nav > a:focus-visible::after, .footer > div a:focus-visible::after { transform: scaleX(1); }
+
+.button, .information-card, .feature {
+  transition: transform var(--motion-disclosure) var(--ease-smooth-out),
+    border-color var(--duration-quick), box-shadow var(--motion-disclosure), background-color var(--duration-quick);
+}
+.text-link { transition: color var(--duration-quick); }
+.text-link > span, .nav-download > span, .button > span, .card-link > span {
+  display: inline-block;
+  transition: transform var(--motion-disclosure) var(--ease-smooth-out);
+}
+.button:active, .nav-download:active { transform: scale(.98); }
+.information-card:active { transform: scale(.99); }
+
+.faq summary { transition: color var(--duration-quick); }
+.faq summary::after { content: none; }
+.faq details[open] summary::after { content: none; }
+.faq-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 29px;
+  height: 29px;
+  border-radius: 50%;
+  background: #ff9ab10c;
+  color: var(--warm);
+}
+.faq-icon svg { width: 16px; height: 16px; }
+.faq-icon .vertical {
+  transform-origin: 8px 8px;
+  transition: transform var(--motion-disclosure) var(--ease-smooth-out);
+}
+.faq details[open] .vertical { transform: scaleY(0); }
+/* Browsers without intrinsic-size transitions keep normal native details. */
+@supports (interpolate-size: allow-keywords) and (transition-behavior: allow-discrete) {
+  .faq details { interpolate-size: allow-keywords; }
+  .faq details::details-content {
+    block-size: 0;
+    opacity: 0;
+    overflow: clip;
+    transition: block-size var(--motion-disclosure) var(--ease-smooth-out),
+      opacity var(--motion-disclosure), content-visibility var(--motion-disclosure) allow-discrete;
+  }
+  .faq details[open]::details-content { block-size: auto; opacity: 1; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .header nav > a:hover::after, .footer > div a:hover::after { transform: scaleX(1); }
+  .text-link:hover > span, .nav-download:hover > span, .information-card:hover .card-link > span {
+    transform: translate(2px, -2px);
+  }
+  .button:hover { transform: translateY(-2px); transition-duration: var(--motion-surface); }
+  .button:hover > span { transform: translateY(2px); }
+  .information-card:hover, .feature:hover { transform: translateY(-4px); transition-duration: var(--motion-surface); }
+  .feature:hover .feature-symbol { transform: scale(1.06); }
+  .feature-symbol { transition: transform var(--motion-disclosure) var(--ease-smooth-out); }
+  .faq summary:hover { color: var(--warm); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .faq details::details-content { transition: none !important; }
+  .button:hover, .information-card:hover, .feature:hover, .button:active,
+  .nav-download:active, .information-card:active, .feature:hover .feature-symbol,
+  .text-link:hover > span, .nav-download:hover > span,
+  .information-card:hover .card-link > span, .button:hover > span { transform: none; }
+}
