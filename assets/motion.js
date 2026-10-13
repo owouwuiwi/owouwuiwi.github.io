@@ -33,8 +33,7 @@
     }
   }, { rootMargin: '0px 0px -24px 0px' });
 
-  document.querySelectorAll('.hero-copy > *, .hero-art, .section-heading, .feature, ' +
-    '.freedom > div, .download-panel, .download-footnote, .information-card, .faq details, .footer > *')
+  document.querySelectorAll('[data-reveal]')
     .forEach(element => observer.observe(element));
 
   const settle = () => {
