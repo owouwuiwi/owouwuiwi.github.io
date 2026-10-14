@@ -14,14 +14,19 @@ Everything is extracted from [our demo website](https://owouwuiwi.github.io/exam
 Videos are intentionally black, with a silent audio track. Manga pages are original
 geometric drawings. The TV signal is a **finite test file**, not a real broadcast.
 
+**Nyanime does not promote piracy in any way or form.** We follow a
+**bring-your-own-content** model. This separate starter uses only original demo
+material; use content you are legally entitled to access and respect copyright.
+[Responsible use](https://owouwuiwi.github.io/responsible-use/).
+
 ## 1. Get ready
 
 Install **JDK 17**, **Android SDK 36 / Build Tools 35.0.1**, and **Python 3.10+**.
 Set `JAVA_HOME` and `ANDROID_HOME`, or put `sdk.dir=/your/android/sdk` in
 `local.properties`. On Windows, use `gradlew.bat` instead of `./gradlew`.
 
-The downloadable kit includes the compile-only SDK and Gradle wrapper. From a
-source-only copy, export them first from a matching Nyanime checkout:
+The matching compile-only SDK, reference API sources and Gradle wrapper are
+included. To refresh the SDK from a matching Nyanime checkout:
 
 ```sh
 python tools/prepare_sdk.py --host /path/to/nyanime --build
