@@ -81,9 +81,9 @@ appear among the selectable Home categories; the manga extension adds **DEMO Man
 Enable/reorder them in Home settings as needed. They disappear when the last
 enabled contributing extension is removed. A catalogue is not required for local import.
 
-For news, install `news/build/outputs/apk/debug/news-debug.apk`, approve the source
-and select it in News. Debug signing is for development only; use an owned release
-key for distribution. Never install both an APK and a RIN copy of the same source.
+For local news development, install `news/build/outputs/apk/debug/news-debug.apk`,
+approve the source and select it in News. For distribution, build `:news:assembleRelease`
+and use `tools/sign_apk.py` with an owned publisher key; see the technical reference. Never install both an APK and a RIN copy of the same source.
 
 ## Make it yours
 

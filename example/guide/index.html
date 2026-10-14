@@ -1,4 +1,13 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Quick start · Nyanime developers</title><link rel="stylesheet" href="/example/style.css"><style>article{max-width:880px}h2{margin-top:2em}pre{padding:18px;border-radius:14px;background:#202637;overflow:auto;font-size:14px}code{font-size:.9em}table{display:block;overflow:auto;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #394052;text-align:left;vertical-align:top}nav{display:flex;flex-wrap:wrap;gap:18px}.skip{position:absolute;left:-9999px}.skip:focus{left:12px}</style></head><body><a class="skip" href="#content">Skip to content</a><header><a href="/example/">◇ NYANIME DEVELOPERS</a><nav><a href="/example/guide/">Quick start</a><a href="/example/reference/">Reference</a><a href="/example/checklist/">Checklist</a></nav></header><main id="content"><article><h1 id="build-your-first-nyanime-extension">Build your first Nyanime extension</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#130f16">
+<meta name="description" content="The Nyanime extension playground. Original demo content, a five-step starter and the complete developer reference.">
+<meta name="robots" content="noindex"><link rel="icon" href="/example/brand/mark.svg" type="image/svg+xml">
+<script>try{const t=localStorage.getItem('nyanime-theme');document.documentElement.dataset.theme=t==='light'||t==='dark'?t:matchMedia('(prefers-color-scheme:light)').matches?'light':'dark'}catch{}</script>
+<link rel="stylesheet" href="/example/brand/nyanime.css?v=2"><link rel="stylesheet" href="/example/style.css?v=2">
+<script src="/example/playground.js?v=2" defer></script><title>Quick start · Nyanime</title></head><body>
+<a class="skip" href="#main">Skip to content</a><div class="site-shell">
+<header class="header glass"><a href="/" class="brand" aria-label="Nyanime home"><img class="logo dark-logo" src="/example/brand/logo-dark.svg" width="164" height="47" alt="Nyanime"><img class="logo light-logo" src="/example/brand/logo-light.svg" width="164" height="47" alt="Nyanime"></a><a class="playground-label" href="/example/">Playground <span>FOR CREATORS</span></a><nav aria-label="Playground navigation"><a class="desktop-nav" href="/example/#demos">Demos</a><a class="nav-download" href="/example/guide/">Start building <span aria-hidden="true">↗</span></a><button class="theme-button" aria-label="Switch to light theme"><svg class="theme-icon theme-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg><svg class="theme-icon theme-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 14.4A8.6 8.6 0 0 1 9.6 3.5a8.6 8.6 0 1 0 10.9 10.9Z"/></svg></button></nav></header>
+<main id="main" class="docs-layout"><article class="docs-article"><h1 id="build-your-first-nyanime-extension">Build your first Nyanime extension</h1>
 <p>A working starter, with an original demo website and four independent examples.
 <strong>Start here.</strong> Use the <a href="/example/reference/">technical reference</a> when adapting it.</p>
 <table>
@@ -32,7 +41,7 @@
 </tr>
 </tbody>
 </table>
-<p>Everything is extracted from <a rel="noopener" href="https://owouwuiwi.github.io/example/">our demo website</a>.
+<p>Everything is extracted from <a href="https://owouwuiwi.github.io/example/">our demo website</a>.
 Videos are intentionally black, with a silent audio track. Manga pages are original
 geometric drawings. The TV signal is a <strong>finite test file</strong>, not a real broadcast.</p>
 <h2 id="1-get-ready">1. Get ready</h2>
@@ -78,9 +87,9 @@ and explicitly approve it. Enable <strong>English</strong> sources if they are h
 appear among the selectable Home categories; the manga extension adds <strong>DEMO Manga</strong>.
 Enable/reorder them in Home settings as needed. They disappear when the last
 enabled contributing extension is removed. A catalogue is not required for local import.</p>
-<p>For news, install <code>news/build/outputs/apk/debug/news-debug.apk</code>, approve the source
-and select it in News. Debug signing is for development only; use an owned release
-key for distribution. Never install both an APK and a RIN copy of the same source.</p>
+<p>For local news development, install <code>news/build/outputs/apk/debug/news-debug.apk</code>,
+approve the source and select it in News. For distribution, build <code>:news:assembleRelease</code>
+and use <code>tools/sign_apk.py</code> with an owned publisher key; see the technical reference. Never install both an APK and a RIN copy of the same source.</p>
 <h2 id="make-it-yours">Make it yours</h2>
 <p>An extension can declare <strong>multiple Home categories</strong>. For example, a cartoons
 provider declares <code>homes[].id = "cartoons"</code>, its label, sections and supported
@@ -92,4 +101,18 @@ the generated manifests and Home JSON: change the generator when keeping custom 
 <p>Code: Apache-2.0, with inherited API notices retained. Generated demo media:
 CC0-1.0; see <a href="/example/ASSETS.md">ASSETS.md</a>. No third-party series, scans or streams
 are included. The app stays generic; this optional extension owns every demo URL,
-selector and parsing rule.</p></article></main><footer>English developer documentation · <a href="/example/downloads/placeholder-extension-kit.zip">Download kit</a> · <a href="https://github.com/owouwuiwi/nyanime">Application source</a></footer></body></html>
+selector and parsing rule.</p></article><aside class="doc-sidebar" aria-label="Documentation navigation"><p>DEVELOPER HANDBOOK</p><a href="/example/guide/">01 · Quick start</a><a href="/example/reference/">02 · Technical reference</a><a href="/example/checklist/">03 · Release checklist</a><details class="doc-toc"><summary>On this page</summary><div class="toc">
+<ul>
+<li><a href="#build-your-first-nyanime-extension">Build your first Nyanime extension</a><ul>
+<li><a href="#1-get-ready">1. Get ready</a></li>
+<li><a href="#2-configure">2. Configure</a></li>
+<li><a href="#3-build-and-test">3. Build and test</a></li>
+<li><a href="#4-make-your-rin">4. Make your RIN</a></li>
+<li><a href="#5-open-in-nyanime">5. Open in Nyanime</a></li>
+<li><a href="#make-it-yours">Make it yours</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</details></aside></main>
+<footer class="footer playground-footer"><div class="footer-main"><a href="/example/" class="footer-wordmark">Made to be <span class="accent-text">made yours.</span></a><nav aria-label="Developer links"><a href="/example/guide/">Quick start</a><a href="/example/reference/">Technical reference</a><a href="/example/checklist/">Release checklist</a><a href="/example/ASSETS.md">Media credits</a></nav></div><p>© 2026 owouwuiwi &amp; Nyanime contributors. Original demo media: CC0-1.0.<br>Extension code: Apache-2.0. Font licences are included with the starter.</p></footer></div></body></html>
