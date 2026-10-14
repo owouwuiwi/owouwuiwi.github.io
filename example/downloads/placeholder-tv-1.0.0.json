@@ -1,0 +1,33 @@
+{
+  "file": "placeholder-tv-1.0.0.rin",
+  "sha256": "97b507c5d164136ddeff3de54671c09a473cfc64ac24efc6cfb490716abaeb8f",
+  "publisher": "bce288c406124a8304871e4c33008bc718aa4cd66097c37f7b909e984052955c",
+  "manifest": {
+    "schema": 2,
+    "packageName": "example.placeholder.tv",
+    "name": "DEMO TV",
+    "versionCode": 1,
+    "versionName": "1.0.0",
+    "medium": "tv",
+    "extensionLib": 1.0,
+    "entryPoints": [
+      "example.placeholder.tv.TvFactory"
+    ],
+    "sources": [
+      {
+        "id": 481001004,
+        "name": "DEMO TV",
+        "language": "en"
+      }
+    ],
+    "minHostVersionCode": 232,
+    "hashes": {
+      "assets/nyanime/extension-v1.json": "d36afa98a84d7218f89f88eb6f38742bcd19a3f1fcfd14b075921c82f7b125bc",
+      "assets/nyanime/rin-icon": "c4049a8f656a4ccf6c2537627846dc3d543c23510f84e548a22f714ed90022d5",
+      "classes.dex": "45a006f085d342b9caa962f35c6dff9b34e546cd563873ca6cda0ce0e0d256e3",
+      "classes2.dex": "5556026eacfdda3fd63630181c7aa83f7e952875f08ca31ff4e81216d49197ad",
+      "classes3.dex": "cd13950412b4b17348281affaabac03fccfb032d05ed24f7513b5ce2a104b58d",
+      "classes4.dex": "96afd965ecdfe8fe299b73dc96ad1fd33a4e62e87042a1499f2692d34ad4e7d6"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "version": "1.0.0",
+  "minimumHostVersionCode": 232,
+  "distribution": "Original developer demos; explicit publisher approval required.",
+  "files": [
+    {
+      "file": "placeholder-manga-1.0.0.rin",
+      "sha256": "a8778389737b90ef5b1b430590c6d40f871294af66967fad33380e071ab7f8f8",
+      "publisher": "bce288c406124a8304871e4c33008bc718aa4cd66097c37f7b909e984052955c"
+    },
+    {
+      "file": "placeholder-news-1.0.0.apk",
+      "sha256": "8d4713d4daad28bcaf47c6dcc5019346cd8f6e4a5b5771361f1b61940bc49dd0",
+      "publisher": "bce288c406124a8304871e4c33008bc718aa4cd66097c37f7b909e984052955c"
+    },
+    {
+      "file": "placeholder-tv-1.0.0.rin",
+      "sha256": "97b507c5d164136ddeff3de54671c09a473cfc64ac24efc6cfb490716abaeb8f",
+      "publisher": "bce288c406124a8304871e4c33008bc718aa4cd66097c37f7b909e984052955c"
+    },
+    {
+      "file": "placeholder-video-1.0.0.rin",
+      "sha256": "f93e6c7b8c8988c9586afd44e4cc2f302522bd7121688f639c1df7648c4e7b5e",
+      "publisher": "bce288c406124a8304871e4c33008bc718aa4cd66097c37f7b909e984052955c"
+    }
+  ]
+}
