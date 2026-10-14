@@ -39,3 +39,12 @@ Code: Apache-2.0, with inherited API notices retained. Original demo media:
 CC0-1.0; branding and fonts retain their own notices. See
 [media credits](website/ASSETS.md). RIN is signed executable code, not a sandbox.
 No private catalogue is included or required.
+
+## Website presentation
+
+The playground uses original SVG artwork from `art/` for its public interface.
+The versioned parser fixtures remain in `api/`, `images/` and `media/`; their hashes,
+embedded entry data and the published signed packages are independent of the
+presentation. The full developer guide retains its generated article content.
+The main Nyanime homepage links to the playground through its Developers navigation
+and creator section. All pages support light/dark themes and reduced motion.
