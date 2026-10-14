@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Release checklist · Nyanime developers</title><link rel="stylesheet" href="/example/style.css"><style>article{max-width:880px}h2{margin-top:2em}pre{padding:18px;border-radius:14px;background:#202637;overflow:auto;font-size:14px}code{font-size:.9em}table{display:block;overflow:auto;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #394052;text-align:left;vertical-align:top}nav{display:flex;flex-wrap:wrap;gap:18px}.skip{position:absolute;left:-9999px}.skip:focus{left:12px}</style></head><body><a class="skip" href="#content">Skip to content</a><header><a href="/example/">◇ NYANIME DEVELOPERS</a><nav><a href="/example/guide/">Quick start</a><a href="/example/reference/">Reference</a><a href="/example/checklist/">Checklist</a></nav></header><main id="content"><article><h1 id="extension-release-checklist">Extension release checklist</h1>
+<h2 id="before-building">Before building</h2>
+<ul>
+<li>[ ] Choose unique package/source IDs and keep them stable for future versions.</li>
+<li>[ ] Pin a matching compile-only SDK; retain license and attribution notices.</li>
+<li>[ ] Review every URL, selector, timestamp, model field and supported capability.</li>
+<li>[ ] Remove demo IDs and labels when publishing your own adapter.</li>
+<li>[ ] Confirm you have rights to publish the content and metadata you distribute.</li>
+</ul>
+<h2 id="automated-checks">Automated checks</h2>
+<ul>
+<li>[ ] <code>python -m unittest discover -s tests -v</code> passes.</li>
+<li>[ ] <code>./gradlew :common:test</code> and the selected module's build pass.</li>
+<li>[ ] RIN verification passes; no host/shared classes enter DEX.</li>
+<li>[ ] Empty results, filtered pagination, malformed data and failed requests are covered.</li>
+<li>[ ] Source URLs and references remain stable; fetch time is not publication time.</li>
+<li>[ ] Source code/archive contains no private keys, credentials or machine paths.</li>
+</ul>
+<h2 id="on-a-physical-device">On a physical device</h2>
+<ul>
+<li>[ ] Explicitly review/approve the signer; test initial import and a higher version.</li>
+<li>[ ] Enable the source language, select its Home categories and reorder them.</li>
+<li>[ ] Confirm one extension contributes multiple independently scoped categories.</li>
+<li>[ ] Test all sections, genre/date filters, search and next-page exhaustion.</li>
+<li>[ ] Open a detail page; play each quality/subtitle or read every page in order.</li>
+<li>[ ] Test an odd-page chapter, rotation and return without losing progress.</li>
+<li>[ ] Check News articles or TV unavailable-guide state when using those examples.</li>
+<li>[ ] Test offline, cancellation, slow responses and retry; no infinite loading.</li>
+<li>[ ] Test source disable/removal, saved library entries and missing-source messages.</li>
+<li>[ ] Verify narrow layouts, large text, light/dark themes and reduced motion.</li>
+<li>[ ] Check room/Cast/PiP paths separately if supported; do not infer from local playback.</li>
+</ul>
+<h2 id="publish">Publish</h2>
+<ul>
+<li>[ ] Increase <code>versionCode</code>, retain package/source IDs and publisher key.</li>
+<li>[ ] Package with an owned signer; review the public fingerprint and SHA-256 report.</li>
+<li>[ ] Keep signing keys out of Git and downloadable archives.</li>
+<li>[ ] Distribute source, required licenses, build instructions and an honest test record.</li>
+</ul></article></main><footer>English developer documentation · <a href="/example/downloads/placeholder-extension-kit.zip">Download kit</a> · <a href="https://github.com/owouwuiwi/nyanime">Application source</a></footer></body></html>
