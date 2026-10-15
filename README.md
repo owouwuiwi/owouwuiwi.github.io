@@ -27,3 +27,12 @@ remain available, alongside privacy, data controls, source, licences and credits
 Download selection retains `assets/site.js` and `assets/releases.js` unchanged.
 Shared-link parsing, landing pages, Android association files, logos and font
 licences are unchanged; legacy styles continue to serve the shared-link pages.
+
+The developer playground at `/example/` shares the product branding and original
+SVG illustrations. It is reachable from the main navigation, footer and the
+dedicated creator section at `/#developers`. Its gallery initially shows eight
+examples, with progressive disclosure and keyboard-accessible family filters.
+Each family links directly to its API contract in the canonical guide. Without
+JavaScript every example remains available. Reduced motion disables the filter
+and reveal animations. Presentation changes do not alter the parser fixtures,
+media, SDKs or previously published signed downloads.
