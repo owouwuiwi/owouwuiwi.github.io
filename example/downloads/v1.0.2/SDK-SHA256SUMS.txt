@@ -1,0 +1,8 @@
+262931ed3d256bf9fe9064a3ef619225cad8d3b9b28861cf30a4b60dd039d3a9  placeholder-extension-kit.zip
+8a5e00796865d02de98714ef21602a040d3a81740b63e3c551f686f199cbd81e  VERIFICATION.md
+ab71c3695ee5efc79a1fd5fa4cb22f72e70778ad8449ea0fce192d780ddba6ce  placeholder-addon-1.0.1.apk
+b11f3ef6be214e926ef20306f88e9a3a71f0e6fa0f8f15df3ea1c4c5e1419c20  placeholder-guide-1.0.1.apk
+6afdbaeb1808a762ff4c865f907901317e4199d8ede0db9fbb41b588aaf43f58  placeholder-manga-1.0.1.apk
+aa42bdad566f873c50062c3c47e104d39bdad86074c3d6829a670f7c37a21a82  placeholder-news-1.0.1.apk
+65dad1ef085d9e94370619bd746ce0704bfdebc01d3e1cd478e93b31c356f399  placeholder-tv-1.0.1.apk
+fd7fb2bef3228117c9274cb7c958a3b09e2a74252665e6a007427c1295d07506  placeholder-video-1.0.1.apk

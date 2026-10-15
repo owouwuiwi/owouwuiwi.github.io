@@ -139,9 +139,21 @@
     if (!code) return;
     const button = document.createElement('button');
     button.type = 'button'; button.className = 'copy-code'; button.textContent = 'Copy'; button.setAttribute('aria-label', 'Copy code snippet');
+    const feedback = label => {
+      button.textContent = label;
+      button.setAttribute('aria-label', label);
+      setTimeout(() => { button.textContent = 'Copy'; button.setAttribute('aria-label', 'Copy code snippet'); }, 1800);
+    };
     button.addEventListener('click', async () => {
-      try { await navigator.clipboard.writeText(code.textContent); button.textContent = 'Copied'; setTimeout(() => { button.textContent = 'Copy'; }, 1400); }
-      catch { button.textContent = 'Select text'; }
+      try { await navigator.clipboard.writeText(code.textContent); feedback('Copied'); }
+      catch {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+        feedback(selection?.toString() ? 'Text selected' : 'Select code manually');
+      }
     });
     pre.append(button);
   });
