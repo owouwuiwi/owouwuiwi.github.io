@@ -1,6 +1,15 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const links = require('../assets/room-links.js');
+const associations = require('../.well-known/assetlinks.json');
+
+test('HTTPS invites are associated with the current production Android identity', () => {
+  const production = associations.find(entry => entry.target.package_name === 'it.owouwuiwi.nyanime');
+  assert.ok(production.relation.includes('delegate_permission/common.handle_all_urls'));
+  assert.equal(production.target.namespace, 'android_app');
+  assert.ok(production.target.sha256_cert_fingerprints.some(fingerprint =>
+    fingerprint.replaceAll(':', '') === '7DD368792C4D94D1186CC4B0E2AD6C2F34FCE5DD37F19C6A1BAB45106FFC136B'));
+});
 
 test('room codes preserve leading zeroes and use the exact native route', () => {
   assert.equal(links.decode('#01234567'), '01234567');
