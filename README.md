@@ -6,8 +6,13 @@ Published at https://owouwuiwi.github.io/ using GitHub Pages.
 Self-hosted fonts retain their included SIL Open Font License notices.
 The Android association preserves the existing application identity and certificate.
 
-The homepage uses `assets/nyanime.css`: warm red glass in dark mode, peach glass
-in light mode, compact sticky navigation and a clear path to installation.
+The homepage retains `assets/nyanime.css` for layout. The shared
+`assets/blue-theme.css` supplies midnight blue, petrol and indigo glass in dark
+mode, and cool blue glass in light mode. The star-speckled blue wordmark and N
+mark are transparent SVGs with the original lettering and open counters.
+The palette covers the homepage, sharing pages, developer playground and guide;
+versioned extension fixtures and download packages keep their original bytes.
+Compact sticky navigation and the installation path remain unchanged.
 The Watch / Read / Live TV explorer uses `assets/experience.js`, keyboard tabs
 and short fades. Its artwork is labelled as interface illustration, not screenshots.
 All three panels share a grid row, sized to their natural content. Inactive panels
@@ -24,9 +29,11 @@ Glass has solid-surface and high-contrast fallbacks. Fonts are self-hosted.
 
 Player, reader, library, rooms, releases, downloads, backups and live TV information
 remain available, alongside privacy, data controls, source, licences and credits.
-Download selection retains `assets/site.js` and `assets/releases.js` unchanged.
-Shared-link parsing, landing pages, Android association files, logos and font
-licences are unchanged; legacy styles continue to serve the shared-link pages.
+Download selection retains the existing `assets/site.js` and `assets/releases.js`
+logic; only the browser theme colour changes in the theme controller.
+Shared-link parsing, Android association files and font licences are unchanged.
+The legacy layout of shared-link pages uses the same blue presentation overlay.
+The original red/orange logo assets remain available for versioned demo content.
 
 The developer playground at `/example/` shares the product branding and original
 SVG illustrations. It is reachable from the main navigation, footer and the

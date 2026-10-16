@@ -1,0 +1,106 @@
+/* Shared presentation palette. Content, extension fixtures and link contracts
+   stay independent of the website's visual identity. */
+:root {
+  --bg: #090f1f;
+  --text: #edf4ff;
+  --muted: #a5b6d0;
+  --accent: #8ac7ff;
+  --accent-end: #c3a5ec;
+  --line: #98c8ff26;
+  --surface: #121f36;
+  --surface2: #1b3150;
+  --surface-strong: #1b3150;
+  --glass: #132b4aaf;
+  --button: #90c9ff;
+  --button-text: #0a2040;
+  --warm: #b8b8f4;
+  --shade: #02091655;
+  --shadow: #02091655;
+  --glass-top: #d6eaff0c;
+  --glass-fallback: #121f36;
+  --glass-edge: #a6cfff2b;
+  --glass-shadow: inset 0 1px #ddecff12, 0 16px 55px #02091633;
+}
+:root[data-theme='light'] {
+  --bg: #f0f5fc;
+  --text: #162a47;
+  --muted: #526982;
+  --accent: #2457a7;
+  --accent-end: #6050a0;
+  --line: #254f8c26;
+  --surface: #f9fcff;
+  --surface2: #deebfa;
+  --surface-strong: #deebfa;
+  --glass: #f7fbffbf;
+  --button: #235aab;
+  --button-text: #ffffff;
+  --warm: #564b96;
+  --shade: #1237610d;
+  --shadow: #12376114;
+  --glass-top: #ffffffb3;
+  --glass-fallback: #f9fcff;
+  --glass-edge: #5c8cbf30;
+  --glass-shadow: inset 0 1px #ffffff, 0 14px 50px #12376112;
+}
+html { background: var(--bg); }
+body { display: flow-root; }
+body, [data-theme='light'] body {
+  min-height: 100svh;
+  background:
+    radial-gradient(ellipse 850px 820px at 88% 4%, #2164b02b, transparent 72%),
+    radial-gradient(ellipse 820px 1050px at -8% 30%, #14748a17, transparent 70%),
+    radial-gradient(ellipse 820px 720px at 102% 53%, #6e4eb51a, transparent 70%),
+    radial-gradient(ellipse 900px 1000px at 32% 90%, #1c5f9a1c, transparent 72%),
+    var(--bg);
+}
+body::before { background: none; }
+.glass, .header, .open-card {
+  background: var(--surface);
+  border-color: var(--line);
+  box-shadow: var(--glass-shadow);
+}
+@supports (backdrop-filter: blur(16px)) {
+  .glass, .header, .open-card {
+    background: linear-gradient(135deg, var(--glass-top), transparent 58%), var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+}
+.brand .logo { filter: brightness(1.8) saturate(.9); }
+[data-theme='light'] .brand .logo { filter: none; }
+.hero-mark { filter: brightness(1.35); }
+[data-theme='light'] .hero-mark { filter: none; }
+.hero-halo {
+  background: radial-gradient(ellipse, #347baf33, #41439214 43%, transparent 70%);
+}
+.creator-entry-art, .creator-canvas::before {
+  background: radial-gradient(ellipse at center, #368bc329, transparent 72%);
+}
+.cover-sunset {
+  background: radial-gradient(circle at 65% 29%, #c7d9ff 0 14%, transparent 15%),
+    linear-gradient(155deg, transparent 56%, #242d59 57%),
+    linear-gradient(150deg, #317a98, #454992);
+}
+.player-picture { background: linear-gradient(155deg, #174c75, #5578b4 60%, #7774ab); }
+.scene-sun { background: #c3d9f7; }
+.scene-hill { background: #354c7b; }
+.hill-front { background: #182b4b; }
+.player-bottom b { background: #a7d8ff; }
+.scene-play { color: #213a65; background: #f0f6ffed; }
+.channel-icon { background: #518ad32b; color: #b3d4ff; }
+[data-theme='light'] .channel-icon { background: #518ad31a; color: #285795; }
+.feature-icon, .faq-icon { background: #79b7ff0c; }
+.download-panel::before {
+  background: radial-gradient(ellipse at 0% 0%, #377abf2b, transparent 70%);
+}
+.canvas-preview { border-color: var(--line); background: #172c48; }
+.canvas-preview .preview-caption { background: linear-gradient(transparent, #0c1a39e6); }
+.preview-caption i { color: #213a65; background: #f0f6ff; }
+@media (hover: hover) and (pointer: fine) {
+  .information-card:hover { border-color: #87c6ff66; }
+}
+@media (prefers-contrast: more) {
+  :root { --muted: #d2e3fa; --line: #b7d4ff99; }
+  :root[data-theme='light'] { --muted: #304a70; --line: #365c9699; }
+  .glass, .header, .open-card { background: var(--surface); backdrop-filter: none; }
+}
