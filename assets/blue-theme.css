@@ -66,9 +66,9 @@ body::before { background: none; }
     -webkit-backdrop-filter: blur(16px);
   }
 }
-.brand .logo { filter: brightness(1.8) saturate(.9); }
+.brand .logo { filter: brightness(1.45) saturate(.95); }
 [data-theme='light'] .brand .logo { filter: none; }
-.hero-mark { filter: brightness(1.35); }
+.hero-mark { filter: brightness(1.1); }
 [data-theme='light'] .hero-mark { filter: none; }
 .hero-halo {
   background: radial-gradient(ellipse, #347baf33, #41439214 43%, transparent 70%);

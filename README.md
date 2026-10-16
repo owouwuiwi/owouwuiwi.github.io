@@ -10,6 +10,8 @@ The homepage retains `assets/nyanime.css` for layout. The shared
 `assets/blue-theme.css` supplies midnight blue, petrol and indigo glass in dark
 mode, and cool blue glass in light mode. The star-speckled blue wordmark and N
 mark are transparent SVGs with the original lettering and open counters.
+Broad petrol/indigo gradients keep the wordmark readable; the deepest midnight
+blue is reserved for the folds of the N instead of a stripe across the letters.
 The palette covers the homepage, sharing pages, developer playground and guide;
 versioned extension fixtures and download packages keep their original bytes.
 Compact sticky navigation and the installation path remain unchanged.
