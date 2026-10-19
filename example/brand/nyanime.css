@@ -16,8 +16,8 @@
   --button: #b64632; --button-text: #fff9f5; --shade: #70322c0d;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 116px; }
-body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
+html { background: var(--bg); scroll-behavior: smooth; scroll-padding-top: 116px; }
+body { display: flow-root; min-height: 100svh; margin: 0; background: var(--bg); color: var(--text); font: 16px/1.65 var(--font); -webkit-font-smoothing: antialiased; }
 body::before { content: ''; position: absolute; inset: 0 0 auto; height: 1100px; pointer-events: none; z-index: -1; background: radial-gradient(ellipse at 80% 24%, #a0264020, transparent 55%), radial-gradient(ellipse at 10% 0%, #8e43401a, transparent 50%); }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }

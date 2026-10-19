@@ -11,7 +11,7 @@
     const label = value === 'light' ? 'Switch to dark theme' : 'Switch to light theme';
     themeButton?.setAttribute('aria-label', label);
     themeButton?.setAttribute('title', label);
-    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', value === 'light' ? '#f0f5fc' : '#090f1f');
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', value === 'light' ? '#faf2ef' : '#130f16');
   };
   theme(stored === 'light' || stored === 'dark' ? stored : colour.matches ? 'light' : 'dark');
   themeButton?.addEventListener('click', () => {
