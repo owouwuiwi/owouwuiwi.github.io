@@ -1,0 +1,95 @@
+.dedication {
+  padding-top: 12px;
+  padding-bottom: 88px;
+}
+
+.dedication-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+  overflow: hidden;
+  padding: clamp(25px, 4vw, 40px);
+  border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--line));
+  border-radius: 28px;
+  background:
+    radial-gradient(ellipse at 100% 0%, color-mix(in srgb, var(--accent) 15%, transparent), transparent 48%),
+    color-mix(in srgb, var(--surface) 90%, var(--accent) 10%);
+}
+
+.dedication-card::after {
+  position: absolute;
+  right: -96px;
+  top: -130px;
+  width: 250px;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.dedication-star {
+  display: grid;
+  width: 50px;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--accent) 32%, transparent);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+  font-size: 23px;
+}
+
+.dedication-copy {
+  max-width: 780px;
+}
+
+.dedication-copy .eyebrow {
+  margin: 0 0 9px;
+}
+
+.dedication-copy h2 {
+  margin: 0 0 13px;
+  font-family: var(--display);
+  font-size: clamp(27px, 3vw, 38px);
+  letter-spacing: -.045em;
+  line-height: 1.12;
+}
+
+.dedication-copy p:not(.eyebrow) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.dedication-copy .dedication-signature {
+  margin-top: 15px;
+  color: var(--text);
+  font-weight: 650;
+  letter-spacing: .02em;
+}
+
+@media (max-width: 600px) {
+  .dedication {
+    padding-bottom: 64px;
+  }
+
+  .dedication-card {
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 16px;
+    border-radius: 22px;
+  }
+
+  .dedication-star {
+    width: 38px;
+    border-radius: 12px;
+    font-size: 18px;
+  }
+
+  .dedication-copy p:not(.eyebrow) {
+    font-size: 13px;
+  }
+}
