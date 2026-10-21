@@ -7,8 +7,8 @@ const signal = () => new AbortController().signal;
 const release = (version, prefix = 'Nyanime-Production', repository = repos[0]) => ({
   tag_name: 'v' + version, draft: false, prerelease: false,
   html_url: `https://github.com/${repository}/releases/tag/v${version}`,
-  assets: [{ name: `${prefix}-${version}-universal.apk`,
-    browser_download_url: `https://github.com/${repository}/releases/download/v${version}/${prefix}-${version}-universal.apk` }],
+  assets: [{ name: `${prefix}-${version}-arm64-v8a.apk`,
+    browser_download_url: `https://github.com/${repository}/releases/download/v${version}/${prefix}-${version}-arm64-v8a.apk` }],
 });
 const response = value => ({ ok: true, json: async () => value });
 
@@ -23,7 +23,7 @@ test('production and historic installers are recognized; production wins', () =>
 
 test('patches, previews, drafts, non-numeric tags and untrusted destinations cannot be installers', () => {
   const value = release('1.2.3.4');
-  const patch = { ...value.assets[0], name: 'Nyanime-Delta-base-1.2.3.4-universal.nyadelta' };
+  const patch = { ...value.assets[0], name: 'Nyanime-Delta-base-1.2.3.4-arm64-v8a.nyadelta' };
   for (const changed of [{ draft: true }, { prerelease: true }, { tag_name: 'r9999' },
     { assets: [patch] }, { html_url: 'https://github.com/other/app/releases/tag/v1.2.3.4' },
     { assets: [{ ...value.assets[0], browser_download_url: 'https://example.invalid/app.apk' }] }]) {
@@ -75,6 +75,13 @@ test('an unavailable current publisher may use its explicitly trusted old addres
 test('the no-JavaScript and API-error fallback downloads a complete APK directly', () => {
   const html = fs.readFileSync(require.resolve('../index.html'), 'utf8');
   const href = html.match(/id="apk-download"[^>]*href="([^"]+)"/)[1];
-  assert.match(href, /^https:\/\/github\.com\/owouwuiwi\/nyanime\/releases\/download\/v[\d.]+\/Nyanime-Production-[\d.]+-universal\.apk$/);
+  assert.match(href, /^https:\/\/github\.com\/owouwuiwi\/nyanime\/releases\/download\/v[\d.]+\/Nyanime-Production-[\d.]+-arm64-v8a\.apk$/);
   assert.ok(!href.includes('.nyadelta'));
+});
+
+test('a newer universal-only build never replaces the requested ARM64 installer', () => {
+  const value = release('9.0.0.0');
+  value.assets = value.assets.map(asset => ({ name: asset.name.replace('-arm64-v8a.apk', '-universal.apk'),
+    browser_download_url: asset.browser_download_url.replace('-arm64-v8a.apk', '-universal.apk') }));
+  assert.equal(select(value, repos), null);
 });

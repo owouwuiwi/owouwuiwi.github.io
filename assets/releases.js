@@ -6,8 +6,8 @@
     const version = release.tag_name.slice(1);
     if (!version.split('.').every(part => Number.isSafeInteger(Number(part)))) return null;
     // Browser downloads are installers. Patch files can only be applied by the app.
-    for (const name of [`Nyanime-Production-${version}-universal.apk`,
-      `Nyanime-production-${version}-universal.apk`, `Nyanime-${version}-universal.apk`]) {
+    for (const name of [`Nyanime-Production-${version}-arm64-v8a.apk`,
+      `Nyanime-production-${version}-arm64-v8a.apk`, `Nyanime-${version}-arm64-v8a.apk`]) {
       const asset = release.assets?.find(item => item.name === name);
       if (!asset) continue;
       const trusted = repositories.some(repository =>

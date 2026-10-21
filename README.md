@@ -43,7 +43,7 @@ JavaScript every example remains available. Reduced motion disables the filter
 and reveal animations. Presentation changes do not alter the parser fixtures,
 media, SDKs or previously published signed downloads.
 
-Downloads select only a trusted universal APK from a recommended full release.
+Downloads select only a trusted ARM64 APK from a recommended full release.
 Patch-only releases are used by the in-app updater, never by the website download
 button. A pinned full-APK fallback works without JavaScript or GitHub API access;
 installers can then receive newer versions through the app.
