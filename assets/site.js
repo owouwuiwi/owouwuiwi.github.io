@@ -31,8 +31,8 @@
       const notes = document.getElementById('release-notes');
       if (notes) notes.href = release.html_url;
       const label = document.getElementById('release-label');
-      if (label) label.textContent = `${version} · Recommended${asset.size ? ' · ' + Math.round(asset.size / 1048576) + ' MB' : ''}`;
+      if (label) label.textContent = `Installer ${version}${asset.size ? ' · ' + Math.round(asset.size / 1048576) + ' MB' : ''} · Updates in app`;
     })
-    .catch(() => { /* The GitHub release link remains usable when the API is unavailable. */ })
+    .catch(() => { /* The verified full-APK fallback remains usable when the API is unavailable. */ })
     .finally(() => clearTimeout(timeout));
 })();
