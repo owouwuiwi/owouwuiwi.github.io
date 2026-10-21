@@ -4,72 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#100d13">
-  <meta name="description" content="Il prossimo stile di Nyanime lo scegli tu. Prova tre nuove interfacce per libreria e schede, oppure vota per lasciare tutto com’è.">
-  <meta property="og:title" content="Il prossimo Nyanime. Lo scegli tu.">
-  <meta property="og:description" content="Tre proposte da provare. Una scelta tutta tua. Anche lasciare tutto com’è.">
+  <meta name="description" content="Avviso del creatore di Nyanime: i sondaggi sono interrotti a seguito delle minacce ricevute.">
+  <meta property="og:title" content="Nyanime · I sondaggi si fermano qui">
+  <meta property="og:description" content="A seguito delle minacce ricevute, non verranno organizzati altri sondaggi. Le decisioni sul progetto resteranno al suo creatore.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://owouwuiwi.github.io/vota/">
-  <meta property="og:image" content="https://owouwuiwi.github.io/assets/mark.svg">
   <link rel="canonical" href="https://owouwuiwi.github.io/vota/">
   <link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/vota/vota.css?v=1">
-  <script src="/vota/vota.js?v=1" defer></script>
-  <title>Nyanime · Scegli il prossimo stile</title>
+  <title>Nyanime · Avviso del creatore</title>
+  <style>
+    @font-face{font-family:Manrope;src:url('/assets/manrope.woff2') format('woff2');font-weight:200 800;font-display:swap}
+    :root{color-scheme:dark;font-family:Manrope,system-ui,sans-serif;background:#100d13;color:#faf5f7}
+    *{box-sizing:border-box}body{margin:0;min-height:100svh;display:grid;place-items:center;padding:35px 22px;background:radial-gradient(ellipse at 80% 10%,#63203955,transparent 60%)}
+    main{width:100%;max-width:740px;padding:clamp(28px,7vw,66px);border:1px solid #573440;border-radius:30px;background:linear-gradient(145deg,#3b202b70,#1b151eec);box-shadow:0 24px 100px #0003}
+    .logo{display:block;width:150px;height:auto;margin-bottom:45px}.eyebrow{font-size:11px;letter-spacing:.15em;font-weight:800;color:#ff9caf;margin:0 0 18px}h1{font-size:clamp(32px,6.5vw,54px);line-height:1.12;letter-spacing:-.05em;margin:0 0 28px}
+    p{font-size:16px;line-height:1.9;color:#cdbdc8;margin:0 0 19px}strong{color:#fff4f7;font-weight:750}.signature{margin-top:32px;padding-top:24px;border-top:1px solid #51313f;color:#f6cfdb;font-size:13px}.signature span{display:block;color:#a990a0;font-size:11px;margin-top:3px}
+    a{display:inline-flex;align-items:center;min-height:44px;color:#ffadbf;text-decoration:none;font-size:13px;margin-top:20px}a:hover{text-decoration:underline}a:focus-visible{outline:3px solid #ffadbf;outline-offset:6px;border-radius:4px}
+    @media(max-width:420px){body{padding:18px 14px}main{border-radius:24px}p{font-size:14px}.logo{width:128px;margin-bottom:32px}}
+  </style>
 </head>
 <body>
-  <a class="skip" href="#main">Vai al contenuto</a>
-  <div class="ambient" aria-hidden="true"></div>
-  <header class="topbar">
-    <a href="/" aria-label="Nyanime, torna al sito"><img src="/assets/logo-dark.svg" width="145" height="42" alt="Nyanime"></a>
-    <nav aria-label="Navigazione"><a href="#risultati" id="results-link">Risultati</a><button class="quiet" id="share" type="button">Condividi <span aria-hidden="true">↗</span></button></nav>
-  </header>
-  <main id="main">
-    <section class="intro">
-      <p class="eyebrow"><span class="live-dot"></span> DESIGN LAB · COMMUNITY VOTE</p>
-      <h1>Il prossimo Nyanime.<br><span>Lo scegli tu.</span></h1>
-      <p class="lead">La tua libreria. Le tue schede. Il tuo modo di viverle.<br>Prova le nuove idee e scegli quella che vorresti nell’app.</p>
-      <div class="hero-actions"><a class="primary" href="#prova">Entra nelle proposte <span aria-hidden="true">↘</span></a><a class="quiet" href="#voto">So già cosa scegliere →</a></div>
-      <p class="small intro-note">Nessun account. Un voto per browser, modificabile.</p>
-      <div class="steps" aria-label="Come funziona"><span><b>01</b> Esplora</span><i></i><span><b>02</b> Prova</span><i></i><span><b>03</b> Scegli</span></div>
-    </section>
-
-    <section class="proposals" aria-labelledby="proposals-title">
-      <div class="section-heading"><div><p class="eyebrow">TRE IDEE. TRE PERSONALITÀ.</p><h2 id="proposals-title">Come lo vorresti?</h2></div><p>Non solo immagini: puoi toccare e provare.</p></div>
-      <div class="design-grid">
-        <article class="design-card" data-design-card="ritmo"><div class="design-card-heading"><span class="design-number">A</span><span class="small">PRATICO, OGNI GIORNO</span></div><h3>Ritmo</h3><p>Quello che segui al centro. Ripresa immediata, progressi chiari e una libreria ordinata.</p><button class="preview-shot" type="button" data-try="ritmo" aria-label="Prova il design Ritmo"><img src="/vota/images/ritmo.png" width="414" height="1155" alt="Anteprima del design Ritmo" loading="lazy"><span>Esplora Ritmo ↗</span></button><button class="outline wide" type="button" data-try="ritmo">Prova Ritmo <span aria-hidden="true">↗</span></button></article>
-        <article class="design-card" data-design-card="copertina"><div class="design-card-heading"><span class="design-number">B</span><span class="small">PIÙ SPAZIO ALLE STORIE</span></div><h3>Copertina</h3><p>Immagini protagoniste, una scheda più immersiva e una libreria che invita a esplorare.</p><button class="preview-shot" type="button" data-try="copertina" aria-label="Prova il design Copertina"><img src="/vota/images/copertina.png" width="414" height="1242" alt="Anteprima del design Copertina" loading="lazy"><span>Esplora Copertina ↗</span></button><button class="outline wide" type="button" data-try="copertina">Prova Copertina <span aria-hidden="true">↗</span></button></article>
-        <article class="design-card" data-design-card="taccuino"><div class="design-card-heading"><span class="design-number">C</span><span class="small">TUTTO, A COLPO D’OCCHIO</span></div><h3>Taccuino</h3><p>Meno ingombro, più controllo. Stato personale, note e avanzamento sempre vicini.</p><button class="preview-shot" type="button" data-try="taccuino" aria-label="Prova il design Taccuino"><img src="/vota/images/taccuino.png" width="414" height="1109" alt="Anteprima del design Taccuino" loading="lazy"><span>Esplora Taccuino ↗</span></button><button class="outline wide" type="button" data-try="taccuino">Prova Taccuino <span aria-hidden="true">↗</span></button></article>
-      </div>
-    </section>
-
-    <section class="playground" id="prova" aria-labelledby="try-title">
-      <div class="try-copy"><p class="eyebrow">NON IMMAGINARLO. PROVALO.</p><h2 id="try-title">Prendilo<br>per un giro.</h2><p>Apri la libreria, entra in una scheda, cambia il tracking. Ogni proposta si lascia esplorare.</p>
-        <div class="design-tabs t-tabs" role="tablist" aria-label="Design da provare"><span class="t-tabs-pill" aria-hidden="true"></span><button type="button" class="t-tab" role="tab" aria-selected="true" aria-controls="prototype" data-preview="ritmo">Ritmo</button><button type="button" class="t-tab" role="tab" aria-selected="false" aria-controls="prototype" data-preview="copertina">Copertina</button><button type="button" class="t-tab" role="tab" aria-selected="false" aria-controls="prototype" data-preview="taccuino">Taccuino</button></div>
-        <div class="preview-settings"><fieldset><legend>Contenuto</legend><label><input type="radio" name="medium" value="anime" checked> Anime</label><label><input type="radio" name="medium" value="manga"> Manga</label></fieldset><fieldset><legend>Aspetto</legend><label><input type="radio" name="appearance" value="dark" checked> Scuro</label><label><input type="radio" name="appearance" value="light"> Chiaro</label></fieldset></div>
-        <div class="screen-switch" aria-label="Schermata da provare"><button type="button" class="outline" data-screen="detail" aria-pressed="true">Scheda</button><button type="button" class="outline" data-screen="library" aria-pressed="false">Libreria</button></div>
-        <button class="primary wide" type="button" id="choose-preview">Scelgo Ritmo <span aria-hidden="true">↓</span></button>
-        <p class="small preview-note">Prototipi, non schermate già nell’app. Titoli, copertine e statistiche sono dimostrativi. Alcune funzioni avanzate sono rappresentate da un’anteprima.</p>
-      </div>
-      <div class="prototype-wrap"><div class="preview-label"><span class="live-dot"></span><span id="preview-name">Ritmo · anteprima interattiva</span><span>TOCCA PER PROVARE</span></div><iframe id="prototype" title="Prova interattiva di Nyanime: Ritmo" src="/vota/prototipo/?design=ritmo" loading="lazy" sandbox="allow-scripts allow-same-origin" referrerpolicy="no-referrer"></iframe><noscript><p>Attiva JavaScript per provare i pulsanti e votare. Le immagini delle proposte restano disponibili sopra.</p></noscript></div>
-    </section>
-
-    <section class="vote-panel" id="voto" aria-labelledby="vote-title">
-      <div class="vote-intro"><p class="eyebrow">LA PAROLA A TE</p><h2 id="vote-title">Quale portiamo<br>in Nyanime?</h2><p>Vota l’esperienza nel suo insieme: schede anime e manga, libreria e tracking. Anche preferire quella attuale è una scelta.</p></div>
-      <form id="vote-form"><fieldset class="vote-choices"><legend class="sr-only">Scegli il prossimo stile</legend><label class="vote-option"><input type="radio" name="choice" value="ritmo" required><span class="choice-mark">A</span><span><strong>Ritmo</strong><small>Pratico, chiaro, immediato.</small></span><span class="radio-dot"></span></label><label class="vote-option"><input type="radio" name="choice" value="copertina"><span class="choice-mark">B</span><span><strong>Copertina</strong><small>Più visivo, più immersivo.</small></span><span class="radio-dot"></span></label><label class="vote-option"><input type="radio" name="choice" value="taccuino"><span class="choice-mark">C</span><span><strong>Taccuino</strong><small>Compatto, personale, completo.</small></span><span class="radio-dot"></span></label><label class="vote-option keep"><input type="radio" name="choice" value="attuale"><span class="choice-mark">↺</span><span><strong>Lasciala così</strong><small>Preferisco lo stile che c’è adesso.</small></span><span class="radio-dot"></span></label></fieldset>
-        <div class="honeypot" aria-hidden="true"><label>Lascia vuoto <input name="website" autocomplete="off" tabindex="-1"></label></div>
-        <button id="submit-vote" class="primary wide" type="submit" disabled>Seleziona una proposta</button><p class="form-status" id="vote-status" role="status" aria-live="polite">Puoi cambiare idea: il nuovo voto sostituirà il precedente.</p><p class="small" id="storage-warning" hidden>La memoria del browser non è disponibile. Il voto vale per questa sessione.</p>
-      </form>
-    </section>
-
-    <section class="results-panel" id="risultati" aria-labelledby="results-title">
-      <div class="section-heading"><div><p class="eyebrow">LA VOCE DELLA COMMUNITY</p><h2 id="results-title">Come sta andando.</h2></div><div class="results-actions"><button class="quiet" type="button" id="refresh-results">Aggiorna ↻</button><button class="outline" type="button" id="export-results">Esporta CSV ↓</button></div></div>
-      <div class="results-summary"><strong id="real-total">—</strong><span>voti reali</span><span class="result-live"><span class="live-dot"></span> Risultati condivisi</span></div>
-      <p class="small" id="results-status" role="status">Caricamento dei risultati…</p><div class="result-bars" id="result-bars" aria-live="polite"></div><p class="small" id="updated-at"></p>
-      <details class="demo-results"><summary><span>Simulazione iniziale</span><span class="demo-badge">300 voti dimostrativi</span><span aria-hidden="true">+</span></summary><div><p>Questi numeri sono inventati per mostrare il risultato grafico. <strong>Non provengono da persone e non entrano nel sondaggio reale.</strong></p><div class="result-bars" id="demo-bars"></div><p class="small">«Lasciala così»: 93 su 300, esattamente il 31% della simulazione.</p></div></details>
-    </section>
-    <section class="questions" aria-label="Informazioni sul sondaggio"><details><summary>Posso cambiare il mio voto?<span>+</span></summary><p>Sì. Scegli un’altra proposta e conferma: il voto precedente viene sostituito. Non aggiungiamo un secondo voto quando ricarichi la pagina o ripeti l’invio.</p></details><details><summary>Serve un account?<span>+</span></summary><p>No. Il browser conserva un identificativo casuale, usato solo per riconoscere e modificare il tuo voto. Senza accesso non possiamo impedire alla stessa persona di votare da browser o dispositivi diversi.</p></details><details><summary>Cosa viene salvato?<span>+</span></summary><p>La scelta, la sua data e l’impronta dell’identificativo casuale. Non chiediamo nome, email o account. I risultati aggregati sono pubblici. GitHub Pages e il servizio di voto possono trattare dati tecnici di connessione secondo le rispettive policy. Nessun servizio pubblicitario o di analisi è incluso.</p></details><details><summary>Vincerà automaticamente il più votato?<span>+</span></summary><p>Il sondaggio guiderà il progetto. Prima di portare uno stile nell’app dovremo verificare accessibilità, funzioni e prestazioni. Potremo anche combinare le parti migliori delle proposte.</p></details></section>
+  <main>
+    <img class="logo" src="/assets/logo-dark.svg" width="150" height="43" alt="Nyanime">
+    <p class="eyebrow">AVVISO DEL CREATORE</p>
+    <h1>I sondaggi<br>si fermano qui.</h1>
+    <p>A seguito delle minacce ricevute, comprese <strong>minacce di morte</strong> e altri messaggi gravissimi, <strong>non verranno organizzati altri sondaggi su Nyanime</strong>.</p>
+    <p>Le decisioni sul progetto saranno prese dal suo creatore.</p>
+    <p>Il confronto e le critiche sono benvenuti quando restano rispettosi. Le minacce e le intimidazioni non sono accettabili.</p>
+    <p class="signature">owouwuiwi<span>Creatore di Nyanime</span></p>
+    <a href="/">← Torna al sito di Nyanime</a>
   </main>
-  <footer><a href="/" aria-label="Torna a Nyanime"><img src="/assets/mark.svg" width="28" height="28" alt=""> Nyanime</a><span>Fatto insieme alla community.</span><a href="https://github.com/owouwuiwi">owouwuiwi ↗</a></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
