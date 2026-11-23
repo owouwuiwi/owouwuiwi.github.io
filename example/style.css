@@ -429,7 +429,7 @@ body { overflow-wrap:break-word; }
 .mode-options p { margin-top:0; }
 .mode-options .mode-footnote { grid-column:1/-1; border-top:1px solid var(--line); padding-top:18px; font-size:11px; }
 .docs-article .guide-entry-points { margin:30px 0; }
-.docs-article .guide-entry-points a { display:flex; flex-direction:column; gap:12px; border:1px solid var(--line); border-radius:18px; background:var(--page-dots, none), var(--surface); padding:22px; color:var(--text); text-decoration:none; transition:border-color var(--duration-fast); }
+.docs-article .guide-entry-points a { display:flex; flex-direction:column; gap:12px; border:1px solid var(--line); border-radius:18px; background:var(--surface); padding:22px; color:var(--text); text-decoration:none; transition:border-color var(--duration-fast); }
 .guide-entry-points a strong { font:750 18px/1.4 var(--display); }
 .guide-entry-points a span { color:var(--muted); font-size:13px; line-height:1.8; }
 .prebuilt-links { grid-template-columns:repeat(3,minmax(0,1fr)); }
