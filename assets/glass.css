@@ -63,14 +63,14 @@ body {
 }
 .header, .feature, .download-panel, .information-card, .faq details,
 .floating-note, .open-card {
-  background: var(--glass-fallback);
+  background: var(--page-dots, none), var(--glass-fallback);
   border: 1px solid var(--glass-edge);
   box-shadow: var(--glass-shadow);
 }
 @supports (backdrop-filter: blur(16px)) or (-webkit-backdrop-filter: blur(16px)) {
   .header, .feature, .download-panel, .information-card, .faq details,
   .floating-note, .open-card {
-    background: linear-gradient(135deg, var(--glass-top), transparent 58%), var(--glass);
+    background: var(--page-dots, none), linear-gradient(135deg, var(--glass-top), transparent 58%), var(--glass);
     -webkit-backdrop-filter: blur(16px);
     backdrop-filter: blur(16px);
   }
