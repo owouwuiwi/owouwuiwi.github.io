@@ -23,7 +23,7 @@
   if (!download) return;
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 7000);
-  NyanimeReleases.load(['owouwuiwi/nyanime', 'noire342/nyanime'], fetch, controller.signal)
+  NyanimeReleases.load(['owouwuiwi/nyanime'], fetch, controller.signal)
     .then(selected => {
       if (!selected) return;
       const { release, asset, version } = selected;
