@@ -1,0 +1,12 @@
+:root {
+  --page-dot-color: #fff2ef18;
+  --page-dots: radial-gradient(circle, var(--page-dot-color) 1px, transparent 1.65px) 0 0 / 14px 14px repeat;
+}
+
+:root[data-theme='light'] {
+  --page-dot-color: #67392e20;
+}
+
+@media (prefers-contrast: more), (forced-colors: active) {
+  :root { --page-dots: none; }
+}
